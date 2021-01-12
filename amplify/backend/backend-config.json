@@ -1,0 +1,17 @@
+{
+  "auth": {
+    "gitbaseddeployments213ca7a1": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  },
+  "hosting": {
+    "amplifyhosting": {
+      "service": "amplifyhosting",
+      "type": "cicd",
+      "lastPushTimeStamp": "2021-01-12T20:14:50.739Z"
+    }
+  }
+}
