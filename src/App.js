@@ -8,14 +8,22 @@ import {
 import {onCreateNote} from './graphql/subscriptions'
 import {API} from 'aws-amplify'
 import Amplify from 'aws-amplify'
-import config from './aws-exports'
+
 import './App.css';
 import {v4 as uuid} from 'uuid'
 import {List, Input, Button} from 'antd'
 import 'antd/dist/antd.css'
 import {listNotes} from './graphql/queries'
 
-Amplify.configure(config)
+Amplify.configure({
+    "aws_project_region": process.env["project_region"],
+    "aws_cognito_identity_pool_id": process.env["cognito_identity_pool_id"],
+    "aws_cognito_region": process.env["cognito_region"],
+    "aws_user_pools_id": process.env["user_pools_id"],
+    "aws_user_pools_web_client_id": process.env["user_pools_web_client_id"],
+    "oauth": process.env["oauth"]
+
+})
 const CLIENT_ID = uuid()
 console.log('CLIENT_ID', CLIENT_ID)
 const initialState = {
